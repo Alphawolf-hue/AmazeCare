@@ -1,0 +1,161 @@
+/* MainPage container */
+/* .main-page {
+  min-height: 100vh;
+  background: url('../../images/bg.jpg') no-repeat center left;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+.main-page {
+  position: relative; /* To allow absolutely positioned children */
+  min-height: 100vh;
+  background: url('../../images/bg.jpg') no-repeat center left;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; /* Prevents the watermark from overflowing */
+}
+
+.main-page{
+
+  .main-content {
+    position: relative;
+    z-index: 1; /* Ensures it's above the SVG */
+    font-style: oblique;
+    width: 65%;
+    margin-left: auto;
+    margin-right: 2rem;
+    text-align: right;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+/* Navbar Styling */
+.amazecare-logo {
+  font-weight: bold;
+  font-style: oblique;
+  font-size: 2.4rem;
+  text-shadow: 2px 2px 4px rgba(72, 64, 64, 0.7);
+  color: #212529;
+}
+
+/* Navbar Styling */
+.navbar-logo {
+  max-height: 80px; /* Adjust the size */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Center Navbar Content */
+.navbar .container {
+  text-align: center;
+}
+
+.navbar {
+  padding: 1rem;
+}
+
+/* Center Navbar Text */
+.navbar .container {
+  text-align: center;
+}
+
+/* Content Section */
+.main-content {
+  font-style: oblique;
+  width: 65%; 
+  margin-left: auto; 
+  margin-right: 2rem; 
+  text-align: right; 
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.main-content h1 {
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7);
+}
+
+.main-content p {
+  font-size: 1.1rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #212529;
+  border-color: #212529;
+}
+.btn-primary:hover {
+  background-color: transparent;
+  border-color: #212529;
+  color:#212529 ;
+}
+
+.btn-outline-light {
+  border-color: #212529;
+  color: #212529;
+}
+
+.btn-outline-light:hover {
+  background-color:#212529;
+  color: #f8f9fa;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.svg-watermark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 110%; /* Adjust size */
+  opacity: 0.15; /* Low opacity for watermark effect */
+  background: url('../../images/main-page-logo.svg') no-repeat center center;
+  background-size: contain; /* Ensures it scales while maintaining aspect ratio */
+  pointer-events: none; /* Prevents interference with interactions */
+  z-index: 0; /* Places it behind other elements */
+}
+.footer-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 100px; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Responsive size */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    width: 90%; /* Allow more space on smaller screens */
+    margin-right: auto; /* Center for smaller screens */
+    margin-left: auto;
+    text-align: center; /* Center text for better readability */
+  }
+
+  .main-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .main-content p {
+    font-size: 0.9rem;
+  }
+
+  .amazecare-logo {
+    font-size: 1.5rem;
+  }
+  .footer-logo {
+    width: 150px; 
+  }
+}
+
+}

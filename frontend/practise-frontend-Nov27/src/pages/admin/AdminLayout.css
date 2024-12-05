@@ -1,0 +1,102 @@
+.admin-layout{
+  .watermark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../images/watermark.svg') no-repeat center center;
+    background-size: contain; 
+    opacity: 0.1; 
+    pointer-events: none; 
+    z-index: 1;
+    margin-top: 3rem;
+  }
+  navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+  }
+
+  
+  .navbar-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: left 0.3s ease;
+  }
+  
+  .sidebar.open ~ .main-content .navbar-logo {
+    left: calc(50% + 125px); /* Adjust for open sidebar width */
+  }
+  .navbar-brand {
+    color: #f8f9f8;
+    font-size: 1.25rem; /* Default font size */
+    white-space: nowrap; /* Prevent text wrapping */
+    transition: font-size 0.3s ease;
+  }
+  
+.sidebar {
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #343a40; 
+    color: #f8f9fa; 
+    overflow-x: hidden;
+    transition: 0.3s ease;
+    z-index: 1050;
+  }
+  
+  .sidebar.open {
+    width: 250px; 
+  }
+  .sidebar.closed {
+    width: 0;
+    overflow: hidden; /* Ensure no content is visible when closed */
+  }
+  
+  .sidebar-header {
+    border-bottom: 1px solid #495057;
+  }
+  
+  .sidebar-footer {
+    border-top: 1px solid #495057;
+    margin-top: auto;
+  }
+  
+  .main-content {
+    transition: 0.3s ease;
+  }
+  
+  .sidebar.open ~ .main-content {
+    margin-left: 250px;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar.open {
+      width: 100%;
+    }
+  
+    .sidebar.closed {
+      width: 0; /* Sidebar is hidden when closed */
+    }
+  
+    .sidebar.closed ~ .main-content {
+      margin-left: 0; /* Reset main content margin */
+    }
+    .navbar-logo {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .navbar-brand {
+      font-size: 1rem; /* Smaller font size on small screens */
+      white-space: normal; /* Allow text to wrap if needed */
+      text-align: center; /* Center-align text on small screens */
+    }
+  }
+}

@@ -1,0 +1,19 @@
+/* Default wrapper styling for pages with a background */
+.background-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  /* Ensure other routes/pages don’t inherit this style */
+  body {
+    margin: 0;
+    height: auto;
+    background: none; /* Clears background for non-specified routes */
+  }
+  .page-wrapper {
+    min-height: 100vh;
+  }
